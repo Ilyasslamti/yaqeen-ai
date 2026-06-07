@@ -50,8 +50,8 @@ body{font-family:'Tajawal',sans-serif;background:linear-gradient(135deg,#0f0c29,
 </div>
 <script>
 const chat=document.getElementById('chat'), input=document.getElementById('input');
-// Vercel API (نشر تلقائي من GitHub — استورد الريبو على vercel.com)
-const API='https://yaqeen-ai.vercel.app/api/chat';
+const VERCEl_API='https://yaqeen-ai.vercel.app/api/chat';
+const GROQ_API='https://api.groq.com/openai/v1/chat/completions';
 
 function addMsg(text,role){
   const div=document.createElement('div');
@@ -68,15 +68,25 @@ function showTyping(){
 }
 function hideTyping(){const t=document.getElementById('typing');if(t)t.remove();}
 
-function send(){
+async function tryVercel(text){
+  try {
+    let r=await fetch(VERCEl_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text}),signal:AbortSignal.timeout(8000)});
+    let d=await r.json();
+    if(d.reply) return d.reply;
+  } catch(e){}
+  return null;
+}
+
+async function send(){
   const text=input.value.trim();
   if(!text)return;
   input.value='';
   addMsg(text,'user');
   showTyping();
-  fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text})})
-  .then(r=>r.json()).then(d=>{hideTyping();addMsg(d.reply||'⚠️ خطأ','bot')})
-  .catch(()=>{hideTyping();addMsg('⚠️ فشل الاتصال بالخادم','bot')});
+  let reply=await tryVercel(text);
+  hideTyping();
+  if(reply) addMsg(reply,'bot');
+  else addMsg('⚠️ فشل الاتصال بالخادم\n\nالـ API الخلفي محتاج نشر على Vercel:\nhttps://vercel.com/import\n\nأو جرب البوت على تيليجرام:\nhttps://t.me/yaqeen_manadger_bot','bot');
 }
 input.addEventListener('keydown',e=>{if(e.key==='Enter')send()});
 </script>
