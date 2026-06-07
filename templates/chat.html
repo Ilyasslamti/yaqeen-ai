@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يقين — الذكاء الاصطناعي المغربي</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:10px}
+.container{width:100%;max-width:480px;height:90vh;background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);border-radius:24px;border:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,0.5)}
+.header{background:linear-gradient(135deg,#667eea,#764ba2);padding:16px 20px;text-align:center;color:white}
+.header h1{font-size:20px;font-weight:700}
+.header p{font-size:12px;opacity:0.8;margin-top:2px}
+.chat{flex:1;overflow-y:auto;padding:16px;scroll-behavior:smooth}
+.chat::-webkit-scrollbar{width:4px}
+.chat::-webkit-scrollbar-track{background:transparent}
+.chat::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.2);border-radius:2px}
+.msg{max-width:85%;margin-bottom:12px;animation:fadeIn 0.3s ease;line-height:1.6;font-size:14px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.user{background:linear-gradient(135deg,#667eea,#764ba2);color:white;padding:10px 14px;border-radius:16px 16px 4px 16px;margin-right:auto}
+.bot{background:rgba(255,255,255,0.1);color:#e0e0e0;padding:10px 14px;border-radius:16px 16px 16px 4px;margin-left:auto;direction:ltr;text-align:left}
+.bot:lang(ar){direction:rtl;text-align:right}
+.input-area{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(255,255,255,0.1)}
+.input-area input{flex:1;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px 16px;color:white;font-size:14px;font-family:'Tajawal',sans-serif;outline:none;transition:0.3s}
+.input-area input:focus{border-color:#667eea;background:rgba(255,255,255,0.15)}
+.input-area input::placeholder{color:rgba(255,255,255,0.4)}
+.input-area button{background:linear-gradient(135deg,#667eea,#764ba2);border:none;border-radius:12px;width:48px;height:48px;color:white;cursor:pointer;font-size:20px;transition:0.3s;display:flex;align-items:center;justify-content:center}
+.input-area button:hover{transform:scale(1.05);opacity:0.9}
+.typing{display:flex;gap:4px;padding:10px 14px;background:rgba(255,255,255,0.1);border-radius:16px;width:fit-content;margin-bottom:12px}
+.typing span{width:8px;height:8px;background:#667eea;border-radius:50%;animation:bounce 1.4s infinite}
+.typing span:nth-child(2){animation-delay:0.2s}
+.typing span:nth-child(3){animation-delay:0.4s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-8px)}}
+.status{text-align:center;padding:6px;font-size:11px;color:rgba(255,255,255,0.4)}
+pre{background:rgba(0,0,0,0.3);border-radius:8px;padding:10px;overflow-x:auto;margin:8px 0;direction:ltr;text-align:left;font-size:12px}
+code{font-family:'Courier New',monospace;font-size:12px}
+.footer{text-align:center;padding:8px;font-size:10px;color:rgba(255,255,255,0.3)}
+.footer a{color:#667eea;text-decoration:none}
+@media(max-width:480px){.container{height:100vh;border-radius:0;padding:0}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>🤖 يقين</h1>
+    <p>الذكاء الاصطناعي المغربي — منادجر تك</p>
+  </div>
+  <div class="chat" id="chat"></div>
+  <div class="input-area">
+    <input id="input" type="text" placeholder="اكتب رسالتك هنا..." autofocus>
+    <button id="send" onclick="send()">➤</button>
+  </div>
+  <div class="status">يقين — ذكاء اصطناعي مغربي 100%</div>
+</div>
+<script>
+const chat=document.getElementById('chat');
+const input=document.getElementById('input');
+let botMsg=null;
+
+function addMsg(text,role){
+  const div=document.createElement('div');
+  div.className=`msg ${role}`;
+  if(role=='bot' && /[\u0600-\u06FF]/.test(text)) div.setAttribute('lang','ar');
+  div.innerHTML=text.replace(/\n/g,'<br>');
+  chat.appendChild(div);
+  chat.scrollTop=chat.scrollHeight;
+  return div;
+}
+
+function showTyping(){
+  const div=document.createElement('div');
+  div.className='typing'; div.id='typing';
+  div.innerHTML='<span></span><span></span><span></span>';
+  chat.appendChild(div);
+  chat.scrollTop=chat.scrollHeight;
+}
+
+function hideTyping(){
+  const t=document.getElementById('typing');
+  if(t) t.remove();
+}
+
+function send(){
+  const text=input.value.trim();
+  if(!text) return;
+  input.value='';
+  addMsg(text,'user');
+  showTyping();
+  
+  fetch('/api/chat',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({message:text})
+  })
+  .then(r=>r.json())
+  .then(d=>{
+    hideTyping();
+    addMsg(d.reply,'bot');
+  })
+  .catch(e=>{
+    hideTyping();
+    addMsg('⚠️ حدث خطأ، حاول مرة أخرى','bot');
+  });
+}
+
+input.addEventListener('keydown',e=>{if(e.key==='Enter') send()});
+</script>
+</body>
+</html>
