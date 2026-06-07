@@ -90,7 +90,7 @@ async function send(){
   if(reply){addMsg(reply,'bot');return}
   const demo=DEMO.find(d=>text.includes(d.q.slice(0,10)));
   if(demo){addMsg(demo.a,'bot');return}
-  addMsg('⚠️ فشل الاتصال بالخادم\n• استورد الريبو على Vercel: https://vercel.com/import\n• أو جرب البوت على تيليجرام: https://t.me/yaqeen_manadger_bot','bot');
+  addMsg('⚠️ فشل الاتصال بالخادم\n\nانشر الـ API بنقرة واحدة:\nhttps://vercel.com/new/clone?repository-url=https://github.com/Ilyasslamti/yaqeen-ai\n\nأو جرب البوت على تيليجرام:\nhttps://t.me/yaqeen_manadger_bot','bot');
 }
 input.addEventListener('keydown',e=>{if(e.key==='Enter')send()});
 </script>
