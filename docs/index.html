@@ -51,7 +51,10 @@ body{font-family:'Tajawal',sans-serif;background:linear-gradient(135deg,#0f0c29,
 <script>
 const chat=document.getElementById('chat'), input=document.getElementById('input');
 const VERCEl_API='https://yaqeen-ai.vercel.app/api/chat';
-const GROQ_API='https://api.groq.com/openai/v1/chat/completions';
+const DEMO = [
+  {q:'شنو هي الخدمات لي كتقدمها يا يقين؟',a:'مرحبا! أنا يقين، أول ذكاء اصطناعي مغربي بالكامل. نقدر نعاونك فـ:\n\n📄 CV احترافي — 50 درهم\n✉️ رسالة تغطية — 20 درهم\n📝 كتابة مقالات — 30 درهم\n🌍 ترجمة — 10 درهم/صفحة\n\nإضافة إلى النقاش العام والمشورة في أي موضوع.'},
+  {q:'كفاش نقدر نطلب CV؟',a:'ساهلة! فقط أرسل /cv في البوت ديالي على Telegram:\nhttps://t.me/yaqeen_manadger_bot\n\nوتابع التعليمات.'},
+];
 
 function addMsg(text,role){
   const div=document.createElement('div');
@@ -70,11 +73,10 @@ function hideTyping(){const t=document.getElementById('typing');if(t)t.remove();
 
 async function tryVercel(text){
   try {
-    let r=await fetch(VERCEl_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text}),signal:AbortSignal.timeout(8000)});
+    let r=await fetch(VERCEl_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text}),signal:AbortSignal.timeout(6000)});
     let d=await r.json();
-    if(d.reply) return d.reply;
-  } catch(e){}
-  return null;
+    return d.reply||null;
+  } catch(e){return null}
 }
 
 async function send(){
@@ -85,8 +87,10 @@ async function send(){
   showTyping();
   let reply=await tryVercel(text);
   hideTyping();
-  if(reply) addMsg(reply,'bot');
-  else addMsg('⚠️ فشل الاتصال بالخادم\n\nالـ API الخلفي محتاج نشر على Vercel:\nhttps://vercel.com/import\n\nأو جرب البوت على تيليجرام:\nhttps://t.me/yaqeen_manadger_bot','bot');
+  if(reply){addMsg(reply,'bot');return}
+  const demo=DEMO.find(d=>text.includes(d.q.slice(0,10)));
+  if(demo){addMsg(demo.a,'bot');return}
+  addMsg('⚠️ فشل الاتصال بالخادم\n• استورد الريبو على Vercel: https://vercel.com/import\n• أو جرب البوت على تيليجرام: https://t.me/yaqeen_manadger_bot','bot');
 }
 input.addEventListener('keydown',e=>{if(e.key==='Enter')send()});
 </script>
