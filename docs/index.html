@@ -90,7 +90,7 @@ async function send(){
   if(reply){addMsg(reply,'bot');return}
   const demo=DEMO.find(d=>text.includes(d.q.slice(0,10)));
   if(demo){addMsg(demo.a,'bot');return}
-  addMsg('⚠️ فشل الاتصال بالخادم\n\nانشر الـ API بنقرة واحدة:\nhttps://vercel.com/new/clone?repository-url=https://github.com/Ilyasslamti/yaqeen-ai\n\nأو جرب البوت على تيليجرام:\nhttps://t.me/yaqeen_manadger_bot','bot');
+  addMsg('⚠️ فشل الاتصال بالخادم\n\nانشر الـ API مجاناً (بدون كارت بنكي):\nGlitch: https://glitch.com/edit/#!/import/github/Ilyasslamti/yaqeen-ai\nVercel: https://vercel.com/new/clone?repository-url=https://github.com/Ilyasslamti/yaqeen-ai\n\nأو جرب البوت على تيليجرام:\nhttps://t.me/yaqeen_manadger_bot\n\n(ضع متغير GROQ_API_KEY في إعدادات المنصة)','bot');
 }
 input.addEventListener('keydown',e=>{if(e.key==='Enter')send()});
 </script>
