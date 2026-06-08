@@ -51,7 +51,7 @@ body{font-family:'Tajawal',sans-serif;background:linear-gradient(135deg,#0f0c29,
 <script>
 const chat=document.getElementById('chat'), input=document.getElementById('input');
 const VERCEl_API='https://yaqeen-ai.vercel.app/api/chat';
-const PYTHONANYWHERE_API='https://yaqeenai.pythonanywhere.com/api/chat';
+const PYTHONANYWHERE_API='https://ilyasslamti.pythonanywhere.com/api/chat';
 const DEMO = [
   {q:'شنو هي الخدمات لي كتقدمها يا يقين؟',a:'مرحبا! أنا يقين، أول ذكاء اصطناعي مغربي بالكامل. نقدر نعاونك فـ:\n\n📄 CV احترافي — 50 درهم\n✉️ رسالة تغطية — 20 درهم\n📝 كتابة مقالات — 30 درهم\n🌍 ترجمة — 10 درهم/صفحة\n\nإضافة إلى النقاش العام والمشورة في أي موضوع.'},
   {q:'كفاش نقدر نطلب CV؟',a:'ساهلة! فقط أرسل /cv في البوت ديالي على Telegram:\nhttps://t.me/yaqeen_manadger_bot\n\nوتابع التعليمات.'},
@@ -99,7 +99,7 @@ async function send(){
   if(reply){addMsg(reply,'bot');return}
   const demo=DEMO.find(d=>text.includes(d.q.slice(0,10)));
   if(demo){addMsg(demo.a,'bot');return}
-  addMsg('⚠️ فشل الاتصال بالخادم\n\n📌 انشر البوت + API مجاناً 24/7:\n1️⃣ سجل في https://www.pythonanywhere.com\n2️⃣ ارفع الملفات من الريبو\n3️⃣ أضف المتغيرات\n4️⃣ استمتع 🚀\n\n🔗 GitHub: https://github.com/Ilyasslamti/yaqeen-ai\n🤖 تيليجرام: https://t.me/yaqeen_manadger_bot','bot');
+  addMsg('⚠️ فشل الاتصال بالخادم\n\n🔗 جرب تيليجرام: https://t.me/yaqeen_manadger_bot\n🐙 GitHub: https://github.com/Ilyasslamti/yaqeen-ai','bot');
 }
 input.addEventListener('keydown',e=>{if(e.key==='Enter')send()});
 </script>
