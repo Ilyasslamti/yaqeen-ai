@@ -264,6 +264,92 @@ class MoroccoRAG:
             {"kw":["شركات","ناشئة","مقاولات","مغرب","ستارت أب"],"t":"المقاولات الناشئة","c":"المغرب يشهد ازدهارا في الشركات الناشئة. مراكز الابتكار: Technopark (الدار البيضاء)، UM6P (بن جرير)."},
 
             # ═══════════════════════════════════════════
+            #  البرمجة والتطوير — Programming Knowledge Base
+            # ═══════════════════════════════════════════
+            {"kw":["بايثون","python","بيثون","لغة"],"t":"لغة بايثون","c":"Python لغة برمجة عالية المستوى. تستخدم في الويب (Django/Flask)، البيانات، الذكاء الاصطناعي، الأتمتة. سهلة التعلم، قوية ومفتوحة المصدر."},
+            {"kw":["جافا","سكريبت","javascript","js","ecma"],"t":"JavaScript","c":"JavaScript لغة برمجة الويب الأساسية. تعمل في المتصفح والسيرفر (Node.js). إطارتها: React، Vue، Angular. أساس تطوير الويب."},
+            {"kw":["تايپ","سكريبت","typescript","ts"],"t":"TypeScript","c":"TypeScript نسخة مطورة من JavaScript مع إضافة الأنواع (Types). طورتها مايكروسوفت. تستخدم في المشاريع الكبيرة للكشف عن الأخطاء قبل التشغيل."},
+            {"kw":["جافا","java","jvm","spring"],"t":"لغة جافا","c":"Java لغة برمجة قوية تعمل على JVM. تستخدم في تطبيقات الأندرويد، تطبيقات المؤسسات،Spring Boot. طورتها Sun Microsystems."},
+            {"kw":["سي","++","c++","cplusplus"],"t":"لغة C++","c":"C++ لغة برمجة عالية الأداء. تستخدم في الألعاب، المحركات، الأنظمة المضمنة. تجمع بين البرمجة الكائنية والتحكم المنخفض."},
+            {"kw":["سي#","c#","csharp","دوت","نيت"],"t":"لغة C#","c":"C# لغة برمجة من مايكروسوفت. تستخدم مع .NET لتطوير تطبيقات ويندوز، الألعاب (Unity)، تطبيقات الويب (ASP.NET)."},
+            {"kw":["غو","go","golang"],"t":"لغة Go","c":"Go (Golang) لغة من Google. سريعة، بسيطة، ممتازة للخوادم والشبكات. تستخدم في Docker، Kubernetes، الأنظمة الموزعة."},
+            {"kw":["راست","rust","rustlang"],"t":"لغة Rust","c":"Rust لغة برمجة من Mozilla. تركز على الأمان والسرعة. تستخدم في الأنظمة، المتصفحات، البلوكتشين. لا تحتاج Garbage Collector."},
+            {"kw":["php","بي","إتش","بي","laravel"],"t":"لغة PHP","c":"PHP لغة برمجة خوادم. تشغل 77% من المواقع. إطارتها: Laravel، Symfony، WordPress. ممتازة لتطوير المواقع الديناميكية."},
+            {"kw":["روبي","ruby","rails","ruby on rails"],"t":"لغة Ruby","c":"Ruby لغة برمجة أنيقة. إطار Rails مشهور لتطوير الويب. تركز على إنتاجية المطور وسهولة القراءة."},
+            {"kw":["سويفت","swift","apple","ios"],"t":"لغة Swift","c":"Swift لغة برمجة من Apple. تستخدم لتطوير تطبيقات iOS وmacOS. حديثة، سريعة، آمنة. خلفت Objective-C."},
+            {"kw":["كوتلن","kotlin","اندرويد","jetpack"],"t":"لغة Kotlin","c":"Kotlin لغة برمجة للأندرويد. من JetBrains. تعمل على JVM. متوافقة مع Java وأفضل منها في الكود الحديث."},
+            {"kw":["دارت","dart","flutter","mobile"],"t":"لغة Dart","c":"Dart لغة من Google. تستخدم مع Flutter لتطوير تطبيقات الهواتف (Android وiOS) بكود واحد."},
+            {"kw":["راست","rust","ويب","أسمبلي"],"t":"WebAssembly (Wasm)","c":"WebAssembly تقنية تشغل كود C++/Rust في المتصفح بسرعة قريبة من السرعة الأصلية. تستخدم في الألعاب وتحرير الفيديو."},
+
+            # === إطارات الويب ===
+            {"kw":["رياكت","react","reactjs","jsx"],"t":"React","c":"React مكتبة JavaScript لبناء واجهات المستخدم. طورتها Facebook. تعتمد على المكونات (Components) و Virtual DOM. الأكثر استخداما في 2026."},
+            {"kw":["نيكست","next.js","nextjs","ssr"],"t":"Next.js","c":"Next.js إطار React للخوادم. يدعم SSR (توليد الصفحات في السيرفر)، SSG (مواقع ثابتة)، API Routes. من Vercel. الخيار الأول في 2026."},
+            {"kw":["فيو","vue","vuejs","vite"],"t":"Vue.js","c":"Vue.js إطار JavaScript تقدمي. سهل التعلم. يستخدم Vite كأداة بناء. شائع في الصين والمشاريع المتوسطة."},
+            {"kw":["أنغولار","angular","typescript","cli"],"t":"Angular","c":"Angular إطار TypeScript قوي من Google. يستخدم في تطبيقات المؤسسات الكبيرة. يوفر كلشي جاهز: Routing، Forms، HTTP."},
+            {"kw":["سفلت","svelte","sveltekit","compiler"],"t":"Svelte","c":"Svelte إطار JavaScript جديد. يحول الكود إلى JavaScript خالص في وقت البناء. أسرع من React. SvelteKit للإطار الكامل."},
+            {"kw":["جانغو","django","python","باترن"],"t":"Django","c":"Django إطار Python لتطوير الويب. يوفر ORM، Admin Panel، Authentication، Security. يتبع مبدأ Batteries Included. مناسب للمشاريع الكبيرة."},
+            {"kw":["فاست","api","fastapi","python","async"],"t":"FastAPI","c":"FastAPI إطار Python حديث وسريع. يدعم Async/Await. ينتج توثيق API تلقائي (Swagger). يستخدم Pydantic للتحقق من البيانات."},
+            {"kw":["فلاسك","flask","python","خفيف"],"t":"Flask","c":"Flask إطار Python خفيف ومرن. مثالي للمشاريع الصغيرة والمتوسطة و APIs. سهل التعلم. يستخدم Jinja2 للقوالب."},
+            {"kw":["إكسبرس","express","node","js","خادم"],"t":"Express.js","c":"Express.js إطار Node.js للخوادم APIs. بسيط وسريع. أساس معظم تطبيقات Node.js. يستخدم مع React/Vue في Full Stack."},
+            {"kw":["نست","nest","nestjs","node","typescript"],"t":"NestJS","c":"NestJS إطار Node.js متقدم. يستخدم TypeScript. يتبع هندسة Modular. مناسب للمشاريع المؤسسية الكبيرة."},
+            {"kw":["لارافيل","laravel","php","eloquent"],"t":"Laravel","c":"Laravel إطار PHP أنيق. يوفر Eloquent ORM، Artisan CLI، Blade templates، Authentication. أشهر إطار PHP في 2026."},
+            {"kw":["سينم","symfony","php","مكونات"],"t":"Symfony","c":"Symfony إطار PHP قوي. مجموعة مكونات قابلة لإعادة الاستخدام. يستخدم في المشاريع الكبيرة. وراء Laravel وDrupal."},
+            {"kw":["روبي","أون","ريلز","ruby on rails","ror","api"],"t":"Ruby on Rails","c":"Rails إطار Ruby كامل. يتبع Convention over Configuration. سريع في بناء التطبيقات. يستخدم Active Record ك ORM."},
+            {"kw":["شبكة","تطوير","api","rest","graphql","endpoint"],"t":"تطوير ال APIs","c":"API يسمح للتطبيقات بالتواصل. REST يستخدم HTTP methods (GET/POST/PUT/DELETE). GraphQL يستخدم Query واحد. APIs أساس التطبيقات الحديثة."},
+            {"kw":["rest","restful","api","http","json"],"t":"REST API","c":"REST (Representational State Transfer) نمط لتصميم APIs. يستخدم JSON. الموارد تحدد بالمسار. الحالات تحدد بالطرق (GET/POST/PUT/DELETE)."},
+            {"kw":["جراف","كيو","إل","graphql","query","mutation"],"t":"GraphQL","c":"GraphQL لغة استعلام APIs من Facebook. العميل يطلب البيانات المحددة فقط. أكثر مرونة من REST. يستخدم Schema و Resolvers."},
+
+            # === قواعد البيانات ===
+            {"kw":["قاعدة","بيانات","database","sql","nosql"],"t":"قواعد البيانات","c":"قاعدة البيانات تخزن البيانات. نوعان: SQL (علائقية: PostgreSQL, MySQL) و NoSQL (غير علائقية: MongoDB, Redis). اختيار النوع حسب حاجة المشروع."},
+            {"kw":["سيكويل","postgresql","postgres","pg","sql"],"t":"PostgreSQL","c":"PostgreSQL أقوى قاعدة بيانات مفتوحة المصدر. تدعم JSON، Full Text Search، ACID. الأفضل للتطبيقات المعقدة والمشاريع الكبيرة."},
+            {"kw":["ماي","سيكويل","mysql","mariadb"],"t":"MySQL","c":"MySQL قاعدة بيانات علائقية مشهورة. تستخدم في WordPress والمواقع الصغيرة. مملوكة لـ Oracle. النسخة المفتوحة: MariaDB."},
+            {"kw":["مونغو","db","mongodb","nosql","document"],"t":"MongoDB","c":"MongoDB قاعدة بيانات NoSQL. تخزن البيانات كمستندات JSON (BSON). مرنة وسريعة. مناسبة للتطبيقات التي تتغير بياناتها بسرعة."},
+            {"kw":["ريدس","redis","cache","مؤقت","memory"],"t":"Redis","c":"Redis قاعدة بيانات في الذاكرة (In-Memory). تستخدم للتخزين المؤقت، الجلسات، الترتيب. سريعة جدا. تدعم Strings, Lists, Sets, Hashes."},
+            {"kw":["سكولايت","sqlite","خفيف","مضمن"],"t":"SQLite","c":"SQLite قاعدة بيانات خفيفة مضمنة. لا تحتاج سيرفر. تخزن في ملف واحد. تستخدم في التطبيقات المحلية والموبايل."},
+            {"kw":["فاير","بيز","firebase","google","nosql"],"t":"Firebase","c":"Firebase منصة Google لتطوير التطبيقات. توفر قاعدة بيانات (Firestore)، مصادقة، تخزين، إشعارات. مناسبة للتطبيقات السريعة."},
+            {"kw":["برون","prisma","orm","database","schema"],"t":"Prisma","c":"Prisma ORM حديث لـ Node.js وTypeScript. يوفر Type Safety، Auto-completion، Migrations. يعمل مع PostgreSQL, MySQL, MongoDB, SQLite."},
+
+            # === الواجهات (HTML/CSS) ===
+            {"kw":["html","اتش","تي","إم","إل","صفحة","ويب"],"t":"HTML","c":"HTML لغة بناء هيكل صفحات الويب. تستخدم العناصر (Elements) والوسوم (Tags). الإصدار الحالي HTML5. أساس أي موقع ويب."},
+            {"kw":["css","سي","إس","إس","تنسيق","تصميم"],"t":"CSS","c":"CSS لغة تنسيق صفحات الويب. تتحكم في الألوان والخطوط والتخطيط. الإصدار CSS3. Flexbox و Grid للتخطيط الحديث."},
+            {"kw":["تايل","ويند","tailwind","css","utility"],"t":"Tailwind CSS","c":"Tailwind CSS إطار CSS يعتمد على Utility Classes. تكتب التنسيق مباشرة في HTML. أسرع من CSS التقليدي. الأكثر شعبية في 2026."},
+            {"kw":["بوت","ستراب","bootstrap","responsive"],"t":"Bootstrap","c":"Bootstrap إطار CSS من Twitter. يوفر مكونات جاهزة ونظام Grid. مناسب للنماذج السريعة والمشاريع التي تحتاج توافق مع المتصفحات."},
+
+            # === أدوات المطور ===
+            {"kw":["بوابة","git","github","gitlab","version"],"t":"Git و GitHub","c":"Git نظام التحكم في الإصدارات. يتتبع تغييرات الكود. GitHub منصة استضافة الكود. الأوامر: commit, push, pull, branch, merge."},
+            {"kw":["دوكر","docker","حاوية","container","deploy"],"t":"Docker","c":"Docker يحزم التطبيقات في حاويات (Containers). كل حاوية تحتوي التطبيق وتبعياته. يعمل في أي مكان. Docker Compose لتعدد الحاويات."},
+            {"kw":["كوب","رنيتس","kubernetes","k8s","orchestration"],"t":"Kubernetes","c":"Kubernetes (k8s) نظام إدارة الحاويات. من Google. يدير النشر والتوسع والإتاحة. يستخدم في المشاريع الضخمة. Pods, Services, Deployments."},
+            {"kw":["لينكس","linux","bash","terminal","سيرفر"],"t":"Linux","c":"Linux نظام تشغيل مفتوح المصدر. أساس الخوادم والسحابة. التوزيعات: Ubuntu, Debian, CentOS. أوامر Bash للتحكم."},
+            {"kw":["npm","pip","yarn","حزمة","مدير"],"t":"مديري الحزم","c":"مدير الحزم يثبت المكتبات والتبعيات. npm/yarn (JavaScript)، pip (Python)، composer (PHP)، cargo (Rust)، go mod (Go)."},
+            {"kw":["في","إس","كود","vscode","editor"],"t":"VS Code","c":"VS Code محرر كود من مايكروسوفت. مجاني ومفتوح. إضافات: ESLint، Prettier، GitLens. الأكثر استخداما بين المطورين."},
+            {"kw":["اختبار","testing","jest","pytest","test"],"t":"اختبار البرمجيات","c":"أنواع الاختبارات: Unit Testing (اختبار الوحدات)، Integration Testing، E2E Testing. أدوات: Jest (JS)، Pytest (Python)، Cypress."},
+            {"kw":["سي","آي","سي","دي","ci","cd","pipeline"],"t":"CI/CD","c":"CI/CD أتمتة بناء ونشر الكود. CI (تجميع واختبار)، CD (نشر تلقائي). أدوات: GitHub Actions، GitLab CI، Jenkins."},
+
+            # === الذكاء الاصطناعي والبيانات ===
+            {"kw":["ذكاء","اصطناعي","ai","ml","تعليم","آلة"],"t":"الذكاء الاصطناعي","c":"AI فرع من علوم الكمبيوتر. التعلم الآلي (ML)، التعلم العميق (Deep Learning). مكتبات: TensorFlow، PyTorch، Scikit-learn."},
+            {"kw":["تعلم","عميق","deep","learning","neural","شبكات"],"t":"التعلم العميق","c":"Deep Learning شبكات عصبية متعددة الطبقات. يستخدم في الصور (CNN)، النصوص (RNN/Transformer)، الصوت. PyTorch و TensorFlow الأكثر استخداما."},
+            {"kw":["نموذج","لغة","llm","gpt","chatgpt","openai"],"t":"النماذج اللغوية الكبيرة (LLMs)","c":"LLMs نماذج ذكاء اصطناعي توليدية. GPT (OpenAI)، Llama (Meta)، Claude (Anthropic). تستخدم في الشات، التلخيص، البرمجة."},
+            {"kw":["نان","باي","numpy","numerical","رياضي"],"t":"NumPy","c":"NumPy مكتبة Python للحسابات الرياضية. توفر المصفوفات (Arrays) والعمليات الرياضية السريعة. أساس Pandas و TensorFlow."},
+            {"kw":["بان","داس","pandas","dataframe","بيانات"],"t":"Pandas","c":"Pandas مكتبة Python لتحليل البيانات. توفر DataFrame (جداول بيانات). تستخدم في تنظيف وتحليل وتصور البيانات."},
+            {"kw":["تنسور","فلور","tensorflow","keras","deep"],"t":"TensorFlow","c":"TensorFlow إطار التعلم العميق من Google. يستخدم Keras كل واجهة. ينشر على السحابة والموبايل والويب. من أقوى أطر AI."},
+            {"kw":["بي","تورش","pytorch","torch","deep"],"t":"PyTorch","c":"PyTorch إطار التعلم العميق من Meta. مرن وسهل التصحيح. الأكثر استخداما في الأبحاث الأكاديمية. Hugging Face مبني عليه."},
+
+            # === مفاهيم برمجية ===
+            {"kw":["برمجة","كائنية","oop","class","object","وراثة"],"t":"البرمجة الكائنية (OOP)","c":"OOP تنظيم الكود في كائنات. المفاهيم: Class (قالب)، Object (كائن)، Inheritance (وراثة)، Encapsulation (تغليف)، Polymorphism (تعدد الأشكال)."},
+            {"kw":["خوارزمية","algorithm","داتا","ستراكتشر","هيكلة"],"t":"الخوارزميات وهياكل البيانات","c":"الخوارزميات خطوات حل المشكلات. هياكل البيانات: Array، Linked List، Stack، Queue، Tree، Graph، Hash Table. أساس المقابلات التقنية."},
+            {"kw":["أتمتة","automation","bot","سكربت","script"],"t":"الأتمتة","c":"الأتمتة تشغيل المهام تلقائيا بدون تدخل بشري. أدوات: Python Scripts، Selenium (ويب)، Cron Jobs (جدولة)، GitHub Actions. تزيد الإنتاجية وتقلل الأخطاء."},
+            {"kw":["تطوير","موبايل","mobile","ios","اندرويد","هاتف"],"t":"تطوير تطبيقات الموبايل","c":"تطوير التطبيقات: Native (Swift/iOS، Kotlin/Android)، Cross-platform (React Native، Flutter). Flutter يستخدم Dart، React Native يستخدم JS."},
+            {"kw":["سحابة","cloud","aws","azure","gcp","hosting"],"t":"الحوسبة السحابية","c":"السحابة توفر خوادم وخدمات عبر الإنترنت. AWS (Amazon)، Azure (Microsoft)، GCP (Google). خدمات: EC2، S3، Lambda، Vercel، PythonAnywhere."},
+            {"kw":["وثائق","api","swagger","openapi","postman"],"t":"توثيق APIs","c":"توثيق API يشرح كيفية استخدامه. Swagger/OpenAPI معيار لتوثيق REST APIs. Postman أداة لاختبار APIs. FastAPI يولد التوثيق تلقائيا."},
+            {"kw":["مصادقة","authentication","jwt","oauth","login","تسجيل"],"t":"المصادقة والأمان","c":"المصادقة تتحقق من هوية المستخدم. طرق: JWT (JSON Web Tokens)، OAuth (تسجيل عبر Google/Facebook)، Session Cookies. HTTPS أساسي للأمان."},
+            {"kw":["تصميم","patterns","نمط","هندسة","software","architecture"],"t":"أنماط التصميم","c":"Design Patterns حلول قابلة للتكرار لمشاكل البرمجة. MVC (Model-View-Controller)، Singleton، Factory، Observer. تحسن جودة الكود."},
+            {"kw":["ويب","سوكيت","websocket","real","time","فوري"],"t":"WebSockets","c":"WebSocket بروتوكول للاتصال ثنائي الاتجاه (Full Duplex) بين المتصفح والسيرفر. يستخدم في الشات، الألعاب، الإشعارات الفورية."},
+            {"kw":["ميكرو","سيرفيس","microservices","monolith","موزع"],"t":"Microservices","c":"Microservices تقسيم التطبيق إلى خدمات صغيرة مستقلة. كل خدمة مسؤولة عن جزء معين. مقابل Monolith (تطبيق واحد). أفضل للتوسع."},
+            {"kw":["openserv","open","serv","api","key","launch"],"t":"OpenServ AI Platform","c":"OpenServ.ai منصة لتشغيل وكلاء ذكاء اصطناعي. توفر API للمطورين. Key: 64ef5c33adcfda1a00abc0f921e216f429602d8f1dab8d5325b109feeb6a1865. تستخدم في إنشاء الإعلانات والمهام الذكية."},
+            {"kw":["groq","ai","api","cloud","سريع"],"t":"Groq AI","c":"Groq منصة ذكاء اصطناعي سريعة. توفر نماذج مثل Llama و Mixtral عبر API. سرعة استجابة فائقة (Token/s عالية). تستخدم في البوتات والتطبيقات."},
+            {"kw":["vercel","نشر","hosting","منصة","سحابي"],"t":"Vercel","c":"Vercel منصة نشر للتطبيقات الأمامية والخلفية. متخصصة في Next.js و Frontend. توفر Serverless Functions و CDN عالمي."},
+
+            # ═══════════════════════════════════════════
             #  منادجر تك
             # ═══════════════════════════════════════════
             {"kw":["منادجر","تك","تقنية","برمجة","مانادجر"],"t":"Manadger Tech","c":"Manadger Tech S.A.R.L شركة مغربية للبرمجة وحلول الويب والأتمتة. تصمم حلولا ذكية للشركات. تقع في المضيق."},
